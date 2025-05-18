@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindpor</title>
+  <!-- React and Babel for this simple demo -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #fff;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+    }
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mindpor</h1>
+  </header>
+  <main>
+    <p>Welcome to the Mindpor UI placeholder.</p>
+    <div id="panel"></div>
+    <button id="toggle">Toggle Dark Mode</button>
+  </main>
+  <script>
+    const button = document.getElementById('toggle');
+    button.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+  <!-- Mount the React EnhancePanel component -->
+  <script type="text/babel" data-type="module" src="../src/components/EnhancePanel.jsx"></script>
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('panel'));
+    root.render(React.createElement(EnhancePanel, {}));
+  </script>
+</body>
+</html>
